@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robocon_gui</name>
+  <version>0.0.1</version>
+  <description>PyQt5 ROS1 GUI for Robocon command control and telemetry monitoring.</description>
+  <maintainer email="hybridthry55@gmail.com">Hybrid Nuuh</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>python3-pyqt5</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+</package>

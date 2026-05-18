@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robocon_robot</name>
+  <version>0.0.1</version>
+  <description>ROS1 robot subscriber example for Robocon GUI commands.</description>
+  <maintainer email="hybridthry55@gmail.com">Hybrid Nuuh</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+</package>
