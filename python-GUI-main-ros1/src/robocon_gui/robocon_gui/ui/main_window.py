@@ -8,6 +8,9 @@ from robocon_gui.core.gui_state import GuiState
 from typing import Optional, Any
 from robocon_gui.services.camera_service import CameraService
 from robocon_gui.ui import styles
+import json
+from pathlib import Path
+from datetime import datetime
 
 
 class RobotMainWindow(QtWidgets.QMainWindow):
@@ -23,6 +26,20 @@ class RobotMainWindow(QtWidgets.QMainWindow):
         self._setup_camera()
         self._setup_timers()
         self._update_last_message_display()
+        # Folder penyimpanan data GUI
+        # Folder data sesuai path kamu
+        self.data_dir = Path(
+            "/home/lucymayreel/Downloads/robocon_gui_ros/python_robocon/python-GUI-main-ros1/src/robocon_gui/robocon_gui/core/kirim/src/gui_publis/gui_publis/data"
+        )
+
+        self.json_dir = self.data_dir / "json"
+        self.dat_dir = self.data_dir / "dat"
+
+        self.json_dir.mkdir(parents=True, exist_ok=True)
+        self.dat_dir.mkdir(parents=True, exist_ok=True)
+
+        self.json_file = self.json_dir / "gui_state.json"
+        self.dat_file = self.dat_dir / "gui_state.dat"
 
     # ======================================================
     # SETUP
@@ -254,7 +271,8 @@ class RobotMainWindow(QtWidgets.QMainWindow):
     def _publish_state(self) -> None:
         if self._suppress_publish:
             return
-        packet = self.ros_node.publish_state(self.state)
+
+        packet = self._save_state_to_file()
         self._update_last_message_display(packet)
 
     def _update_last_message_display(self, msg=None) -> None:
@@ -275,6 +293,26 @@ class RobotMainWindow(QtWidgets.QMainWindow):
                 f"status: {msg.get('status')}"
             )
         self.last_msg_label.setText(text)
+    def _save_state_to_file(self) -> dict:
+        packet = {
+            "cmd": self.state.cmd,
+            "color": self.state.color_mode,
+            "checkpoints": self.state.selected_checkpoints(),
+            "status": self.state.robot_status
+        }
+
+        # Simpan state terakhir ke file JSON
+        with open(self.json_file, "w", encoding="utf-8") as f:
+            json.dump(packet, f, indent=2, ensure_ascii=False)
+
+        # Simpan history ke file DAT
+        with open(self.dat_file, "a", encoding="utf-8") as f:
+            f.write(
+                f"[{datetime.now().isoformat(timespec='seconds')}] "
+                f"{json.dumps(packet, ensure_ascii=False)}\n"
+            )
+
+        return packet
 
     # ======================================================
     # EVENT HANDLERS

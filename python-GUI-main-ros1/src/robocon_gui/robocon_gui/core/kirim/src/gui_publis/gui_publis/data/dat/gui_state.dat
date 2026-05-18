@@ -1,0 +1,154 @@
+[2026-05-18T23:04:33] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1], "status": "READY"}
+[2026-05-18T23:04:38] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2], "status": "READY"}
+[2026-05-18T23:04:40] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 8], "status": "READY"}
+[2026-05-18T23:04:40] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 7, 8], "status": "READY"}
+[2026-05-18T23:04:41] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 7, 8], "status": "READY"}
+[2026-05-18T23:04:41] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 7, 8], "status": "READY"}
+[2026-05-18T23:04:42] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 7, 8, 9], "status": "READY"}
+[2026-05-18T23:04:42] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 7, 9], "status": "READY"}
+[2026-05-18T23:04:42] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 9], "status": "READY"}
+[2026-05-18T23:04:43] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 5, 9], "status": "READY"}
+[2026-05-18T23:04:45] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 5, 9], "status": "READY"}
+[2026-05-18T23:04:46] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 9], "status": "READY"}
+[2026-05-18T23:09:45] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1], "status": "READY"}
+[2026-05-18T23:09:47] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2], "status": "READY"}
+[2026-05-18T23:09:50] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3], "status": "READY"}
+[2026-05-18T23:09:50] {"cmd": "COLOR_CHANGE", "color": "BIRU", "checkpoints": [1, 2, 3], "status": "READY"}
+[2026-05-18T23:10:05] {"cmd": "COLOR_CHANGE", "color": "MERAH", "checkpoints": [1, 2, 3], "status": "READY"}
+[2026-05-18T23:10:10] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4], "status": "READY"}
+[2026-05-18T23:10:10] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5], "status": "READY"}
+[2026-05-18T23:10:11] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "READY"}
+[2026-05-18T23:10:11] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 6], "status": "READY"}
+[2026-05-18T23:10:12] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 6], "status": "READY"}
+[2026-05-18T23:10:13] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 6], "status": "READY"}
+[2026-05-18T23:10:13] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 6], "status": "READY"}
+[2026-05-18T23:10:14] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [6], "status": "READY"}
+[2026-05-18T23:10:18] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 6], "status": "READY"}
+[2026-05-18T23:10:19] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 6], "status": "READY"}
+[2026-05-18T23:10:19] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [3, 6], "status": "READY"}
+[2026-05-18T23:10:20] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 6], "status": "READY"}
+[2026-05-18T23:10:21] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 6], "status": "READY"}
+[2026-05-18T23:10:21] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [6], "status": "READY"}
+[2026-05-18T23:10:22] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 6], "status": "READY"}
+[2026-05-18T23:10:23] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 6, 8], "status": "READY"}
+[2026-05-18T23:10:23] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 6, 7, 8], "status": "READY"}
+[2026-05-18T23:10:24] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 6, 7, 8], "status": "READY"}
+[2026-05-18T23:10:25] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 6, 7, 8], "status": "READY"}
+[2026-05-18T23:10:27] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 7, 8], "status": "READY"}
+[2026-05-18T23:10:27] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 7, 8], "status": "READY"}
+[2026-05-18T23:10:27] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 7, 8], "status": "READY"}
+[2026-05-18T23:10:28] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 7], "status": "READY"}
+[2026-05-18T23:10:28] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7], "status": "READY"}
+[2026-05-18T23:10:29] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [], "status": "READY"}
+[2026-05-18T23:11:04] {"cmd": "START_OTONOM", "color": "MERAH", "checkpoints": [], "status": "OTONOM"}
+[2026-05-18T23:11:21] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1], "status": "OTONOM"}
+[2026-05-18T23:11:24] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2], "status": "OTONOM"}
+[2026-05-18T23:11:25] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3], "status": "OTONOM"}
+[2026-05-18T23:11:45] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4], "status": "OTONOM"}
+[2026-05-18T23:11:46] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5], "status": "OTONOM"}
+[2026-05-18T23:11:48] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:12:08] {"cmd": "COLOR_CHANGE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:12:08] {"cmd": "COLOR_CHANGE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:12:50] {"cmd": "COLOR_CHANGE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:12:51] {"cmd": "COLOR_CHANGE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:12:51] {"cmd": "COLOR_CHANGE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:12:55] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 8], "status": "OTONOM"}
+[2026-05-18T23:12:55] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8], "status": "OTONOM"}
+[2026-05-18T23:12:56] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9], "status": "OTONOM"}
+[2026-05-18T23:12:57] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 11], "status": "OTONOM"}
+[2026-05-18T23:12:57] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:12:59] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:01] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:13:02] {"cmd": "RETRY_CAMERA", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:13:03] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:04] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12], "status": "OTONOM"}
+[2026-05-18T23:13:05] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 12], "status": "OTONOM"}
+[2026-05-18T23:13:05] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 12], "status": "OTONOM"}
+[2026-05-18T23:13:06] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 12], "status": "OTONOM"}
+[2026-05-18T23:13:06] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 12], "status": "OTONOM"}
+[2026-05-18T23:13:07] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [2, 3, 4, 5, 6, 12], "status": "OTONOM"}
+[2026-05-18T23:13:07] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [3, 4, 5, 6, 12], "status": "OTONOM"}
+[2026-05-18T23:13:07] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [4, 5, 6, 12], "status": "OTONOM"}
+[2026-05-18T23:13:08] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [5, 6, 12], "status": "OTONOM"}
+[2026-05-18T23:13:08] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [6, 12], "status": "OTONOM"}
+[2026-05-18T23:13:09] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [6], "status": "OTONOM"}
+[2026-05-18T23:13:45] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 6], "status": "OTONOM"}
+[2026-05-18T23:13:45] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 6], "status": "OTONOM"}
+[2026-05-18T23:13:45] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 6], "status": "OTONOM"}
+[2026-05-18T23:13:46] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 6], "status": "OTONOM"}
+[2026-05-18T23:13:46] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "OTONOM"}
+[2026-05-18T23:13:47] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7], "status": "OTONOM"}
+[2026-05-18T23:13:47] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8], "status": "OTONOM"}
+[2026-05-18T23:13:47] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9], "status": "OTONOM"}
+[2026-05-18T23:13:48] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "status": "OTONOM"}
+[2026-05-18T23:13:48] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:13:48] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:50] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:52] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:53] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:54] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:54] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:54] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:55] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:55] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:55] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:55] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:55] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:56] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:56] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:13:56] {"cmd": "EMERGENCY_STOP", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "STOPPED"}
+[2026-05-18T23:13:58] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:14:01] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "OTONOM"}
+[2026-05-18T23:14:02] {"cmd": "EMERGENCY_STOP", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "STOPPED"}
+[2026-05-18T23:14:03] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [], "status": "READY"}
+[2026-05-18T23:28:20] {"cmd": "START_OTONOM", "color": "BIRU", "checkpoints": [], "status": "OTONOM"}
+[2026-05-18T23:28:34] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1], "status": "OTONOM"}
+[2026-05-18T23:28:35] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2], "status": "OTONOM"}
+[2026-05-18T23:28:37] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3], "status": "OTONOM"}
+[2026-05-18T23:28:38] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4], "status": "OTONOM"}
+[2026-05-18T23:28:47] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [2, 3, 4], "status": "OTONOM"}
+[2026-05-18T23:28:47] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [3, 4], "status": "OTONOM"}
+[2026-05-18T23:28:48] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [4], "status": "OTONOM"}
+[2026-05-18T23:28:48] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [3, 4], "status": "OTONOM"}
+[2026-05-18T23:28:49] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [3], "status": "OTONOM"}
+[2026-05-18T23:28:50] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [], "status": "OTONOM"}
+[2026-05-18T23:28:55] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1], "status": "OTONOM"}
+[2026-05-18T23:28:56] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2], "status": "OTONOM"}
+[2026-05-18T23:28:58] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 4], "status": "OTONOM"}
+[2026-05-18T23:28:58] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4], "status": "OTONOM"}
+[2026-05-18T23:28:59] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 11], "status": "OTONOM"}
+[2026-05-18T23:28:59] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:29:00] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 9, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:29:01] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 8, 9, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:29:01] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 7, 8, 9, 10, 11], "status": "OTONOM"}
+[2026-05-18T23:29:16] {"cmd": "EMERGENCY_STOP", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 7, 8, 9, 10, 11], "status": "STOPPED"}
+[2026-05-18T23:29:22] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [], "status": "READY"}
+[2026-05-18T23:32:26] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1], "status": "READY"}
+[2026-05-18T23:32:27] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2], "status": "READY"}
+[2026-05-18T23:32:27] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3], "status": "READY"}
+[2026-05-18T23:32:28] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4], "status": "READY"}
+[2026-05-18T23:32:28] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5], "status": "READY"}
+[2026-05-18T23:32:28] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6], "status": "READY"}
+[2026-05-18T23:32:31] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7], "status": "READY"}
+[2026-05-18T23:32:33] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8], "status": "READY"}
+[2026-05-18T23:32:34] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9], "status": "READY"}
+[2026-05-18T23:32:36] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "status": "READY"}
+[2026-05-18T23:32:37] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "status": "READY"}
+[2026-05-18T23:32:37] {"cmd": "CHECKPOINT_UPDATE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:32:39] {"cmd": "COLOR_CHANGE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:32:40] {"cmd": "COLOR_CHANGE", "color": "BIRU", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:32:40] {"cmd": "COLOR_CHANGE", "color": "MERAH", "checkpoints": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:21] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:21] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:22] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [4, 5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:22] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [5, 6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:23] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [6, 7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:23] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7, 8, 9, 10, 11, 12], "status": "READY"}
+[2026-05-18T23:34:24] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7, 8, 9, 10, 11], "status": "READY"}
+[2026-05-18T23:34:24] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7, 8, 9, 10], "status": "READY"}
+[2026-05-18T23:34:24] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7, 8, 9], "status": "READY"}
+[2026-05-18T23:34:25] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7, 8], "status": "READY"}
+[2026-05-18T23:34:25] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [7], "status": "READY"}
+[2026-05-18T23:34:25] {"cmd": "CHECKPOINT_UPDATE", "color": "MERAH", "checkpoints": [], "status": "READY"}
+[2026-05-18T23:38:56] {"cmd": "RETRY_CAMERA", "color": "MERAH", "checkpoints": [], "status": "READY"}
+[2026-05-18T23:39:02] {"cmd": "START_OTONOM", "color": "MERAH", "checkpoints": [], "status": "OTONOM"}
