@@ -1,17 +1,17 @@
 import cv2
-from typing import Optional
+from typing import Optional, Any
 
 from PyQt5 import QtWidgets, QtGui, QtCore
 
 from robocon_gui.config import AppConfig
 from robocon_gui.core.gui_state import GuiState
-from robocon_gui.ros.gui_command_publisher import GuiCommandPublisher
+from typing import Optional, Any
 from robocon_gui.services.camera_service import CameraService
 from robocon_gui.ui import styles
 
 
 class RobotMainWindow(QtWidgets.QMainWindow):
-    def __init__(self, config: AppConfig, ros_node: GuiCommandPublisher):
+    def __init__(self, config: AppConfig, ros_node: Any):
         super().__init__()
         self.config = config
         self.ros_node = ros_node
