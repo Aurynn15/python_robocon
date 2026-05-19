@@ -1,6 +1,8 @@
 {
-  "cmd": "START_OTONOM",
+  "cmd": "CHECKPOINT_UPDATE",
   "color": "MERAH",
-  "checkpoints": [],
-  "status": "OTONOM"
+  "checkpoints": [
+    3
+  ],
+  "status": "READY"
 }
