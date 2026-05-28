@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 
 @dataclass(frozen=True)
 class RosConfig:
-    """Konfigurasi ROS1 untuk GUI di Jetson Xavier."""
+    """Konfigurasi ROS2 untuk GUI di Mini PC NUC."""
 
     node_name: str = "robocon_gui_node"
     gui_cmd_topic: str = "/robocon/gui_cmd"

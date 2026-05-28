@@ -176,7 +176,7 @@ class RobotMainWindow(QtWidgets.QMainWindow):
 
         layout.addStretch()
 
-        info = QtWidgets.QLabel("🤖  Robocon 2026\nROS1 rospy JSON Interface")
+        info = QtWidgets.QLabel("🤖  Robocon 2026\nROS2 rclpy JSON Interface")
         info.setAlignment(QtCore.Qt.AlignCenter)
         info.setStyleSheet("background: rgba(59,130,246,0.1); border: 1px solid #3b82f6; border-radius: 10px; padding: 10px; font-size: 12px;")
         layout.addWidget(info)
