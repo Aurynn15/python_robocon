@@ -3,53 +3,47 @@ import json
 import random
 from typing import Dict, List
 
-import rospy
+import rclpy
+from rclpy.node import Node
 from std_msgs.msg import String
 
 
-class RobotCommandSubscriber:
-    """
-    Contoh node robot ROS1.
-
-    Node ini menjadi subscriber/listener dari command GUI:
-      subscribe: /robocon/gui_cmd
-
-    Node ini juga publish data balik untuk monitoring GUI:
-      publish:   /robocon/telemetry
-    """
-
+class RobotCommandSubscriber(Node):
     def __init__(self):
+        super().__init__("robot_command_subscriber")
+
         self.status = "READY"
         self.color = "MERAH"
-        self.checkpoints = []  # type: List[int]
+        self.checkpoints = []
         self.current_checkpoint = "-"
         self.error = None
 
-        self.telemetry_pub = rospy.Publisher(
+        self.telemetry_pub = self.create_publisher(
+            String,
             "/robocon/telemetry",
-            String,
-            queue_size=10,
+            10,
         )
 
-        self.subscriber = rospy.Subscriber(
+        self.subscriber = self.create_subscription(
+            String,
             "/robocon/gui_cmd",
-            String,
             self.on_gui_command,
+            10,
         )
 
-        self.telemetry_timer = rospy.Timer(
-            rospy.Duration(1.0),
+        self.telemetry_timer = self.create_timer(
+            1.0,
             self.publish_telemetry,
         )
 
-        rospy.loginfo("Robot subscriber aktif: /robocon/gui_cmd")
-        rospy.loginfo("Robot telemetry publisher aktif: /robocon/telemetry")
+        self.get_logger().info("Robot subscriber aktif: /robocon/gui_cmd")
+        self.get_logger().info("Robot telemetry publisher aktif: /robocon/telemetry")
 
     def on_gui_command(self, msg: String) -> None:
         try:
             packet = json.loads(msg.data)
         except json.JSONDecodeError:
-            rospy.logwarn("Command dari GUI bukan JSON valid: %s", msg.data)
+            self.get_logger().warning(f"Command dari GUI bukan JSON valid: {msg.data}")
             self.error = "INVALID_GUI_JSON"
             self.publish_telemetry()
             return
@@ -58,7 +52,7 @@ class RobotCommandSubscriber:
         color = packet.get("color", self.color)
         checkpoints = packet.get("checkpoints", [])
 
-        rospy.loginfo("Dari GUI | %s", packet)
+        self.get_logger().info(f"Dari GUI | {packet}")
 
         if cmd == "START_OTONOM":
             self.start_otonom(color, checkpoints)
@@ -73,7 +67,7 @@ class RobotCommandSubscriber:
         elif cmd == "RETRY_CAMERA":
             self.retry_camera()
         else:
-            rospy.logwarn("Command belum dikenali: %s", cmd)
+            self.get_logger().warning(f"Command belum dikenali: {cmd}")
             self.error = "UNKNOWN_COMMAND"
 
         self.publish_telemetry()
@@ -84,44 +78,38 @@ class RobotCommandSubscriber:
         self.checkpoints = checkpoints
         self.current_checkpoint = checkpoints[0] if checkpoints else "-"
         self.error = None
-        rospy.loginfo("ACTION: start otonom | warna=%s | checkpoints=%s", color, checkpoints)
-        # TODO: panggil logic robot jalan otonom di sini.
+        self.get_logger().info(
+            f"ACTION: start otonom | warna={color} | checkpoints={checkpoints}"
+        )
 
     def emergency_stop(self) -> None:
         self.status = "EMERGENCY_STOP"
         self.error = None
-        rospy.logwarn("ACTION: emergency stop")
-        # TODO: matikan motor / aktuator dengan aman di sini.
+        self.get_logger().warning("ACTION: emergency stop")
 
     def reset_robot(self) -> None:
         self.status = "READY"
         self.checkpoints = []
         self.current_checkpoint = "-"
         self.error = None
-        rospy.loginfo("ACTION: reset robot")
-        # TODO: reset state robot di sini.
+        self.get_logger().info("ACTION: reset robot")
 
     def update_checkpoints(self, checkpoints: List[int]) -> None:
         self.checkpoints = checkpoints
         self.current_checkpoint = checkpoints[0] if checkpoints else "-"
         self.error = None
-        rospy.loginfo("ACTION: update checkpoints -> %s", checkpoints)
-        # TODO: simpan checkpoint tujuan robot di sini.
+        self.get_logger().info(f"ACTION: update checkpoints -> {checkpoints}")
 
     def update_color_mode(self, color: str) -> None:
         self.color = color
         self.error = None
-        rospy.loginfo("ACTION: update color mode -> %s", color)
-        # TODO: ubah mode deteksi warna di sini.
+        self.get_logger().info(f"ACTION: update color mode -> {color}")
 
     def retry_camera(self) -> None:
         self.error = None
-        rospy.loginfo("ACTION: retry camera")
-        # TODO: reconnect kamera robot kalau memang diperlukan.
+        self.get_logger().info("ACTION: retry camera")
 
     def make_telemetry_packet(self) -> Dict[str, object]:
-        # Angka di bawah masih dummy untuk test GUI.
-        # Nanti ganti dengan pembacaan sensor asli dari robot/microcontroller.
         return {
             "status": self.status,
             "battery": round(12.0 + random.random() * 0.6, 2),
@@ -132,18 +120,25 @@ class RobotCommandSubscriber:
             "error": self.error,
         }
 
-    def publish_telemetry(self, event=None) -> None:
+    def publish_telemetry(self) -> None:
         packet = self.make_telemetry_packet()
+
         msg = String()
         msg.data = json.dumps(packet)
+
         self.telemetry_pub.publish(msg)
-        rospy.loginfo("ROBOT -> GUI | %s", msg.data)
+        self.get_logger().info(f"ROBOT -> GUI | {msg.data}")
 
 
-def main():
-    rospy.init_node("robot_command_subscriber", anonymous=False)
-    RobotCommandSubscriber()
-    rospy.spin()
+def main(args=None):
+    rclpy.init(args=args)
+    node = RobotCommandSubscriber()
+
+    try:
+        rclpy.spin(node)
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 
 if __name__ == "__main__":

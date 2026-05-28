@@ -1,0 +1,12 @@
+{
+  "cmd": "RETRY_CAMERA",
+  "color": "MERAH",
+  "checkpoints": [
+    1,
+    2,
+    7,
+    8,
+    9
+  ],
+  "status": "OTONOM"
+}

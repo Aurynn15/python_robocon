@@ -1,0 +1,16 @@
+
+# VS Code local setting
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ROS2 build output
+build/
+install/
+log/
+
+# Runtime data
+*.dat
+*.log
