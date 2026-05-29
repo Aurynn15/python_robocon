@@ -28,9 +28,7 @@ class RobotMainWindow(QtWidgets.QMainWindow):
         self._update_last_message_display()
         # Folder penyimpanan data GUI
         # Folder data sesuai path kamu
-        self.data_dir = Path(
-            "/home/lucymayreel/Downloads/robocon_gui_ros/python_robocon/python-GUI-main-ros1/src/robocon_gui/robocon_gui/core/kirim/src/gui_publis/gui_publis/data"
-        )
+        self.data_dir = Path.home() / ".robocon_gui" / "data"
 
         self.json_dir = self.data_dir / "json"
         self.dat_dir = self.data_dir / "dat"
