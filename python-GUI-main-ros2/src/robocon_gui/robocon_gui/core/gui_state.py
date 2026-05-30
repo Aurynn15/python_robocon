@@ -1,28 +1,49 @@
-from dataclasses import dataclass, field
-from typing import Dict, List
+from dataclasses import dataclass
+from typing import Dict, Optional
 
 
 @dataclass
 class GuiState:
-    """State aktif GUI yang dikonversi menjadi JSON untuk ROS1 std_msgs/String."""
+    """State aktif GUI yang dikirim sebagai JSON lewat ROS2 std_msgs/String."""
 
     cmd: str = "READY"
-    color_mode: str = "MERAH"
+    mode: str = "TRAINING"
     robot_status: str = "READY"
-    checkpoint_active: List[bool] = field(default_factory=lambda: [False] * 12)
-
-    def selected_checkpoints(self) -> List[int]:
-        """Mengubah boolean CP menjadi nomor checkpoint aktif: [1, 2, 3]."""
-        return [idx + 1 for idx, active in enumerate(self.checkpoint_active) if active]
+    kfs_color: str = "MERAH"
+    selected_grid: Optional[int] = None
+    selected_weapon_slot: Optional[int] = None
+    selected_checkpoint: Optional[int] = None
 
     def to_packet(self) -> Dict[str, object]:
-        """Bentuk payload command yang akan dikirim ke robot lewat topic ROS1."""
-        return {
+        packet: Dict[str, object] = {
+            "source": "gui",
+            "mode": self.mode,
             "cmd": self.cmd,
-            "color": self.color_mode,
-            "checkpoints": self.selected_checkpoints(),
             "status": self.robot_status,
+            "kfs_color": self.kfs_color,
+
+            # Field compatibility untuk subscriber lama yang membaca key "color".
+            "color": self.kfs_color,
         }
 
-    def reset_checkpoints(self) -> None:
-        self.checkpoint_active = [False] * 12
+        if self.selected_grid is not None:
+            packet["grid"] = self.selected_grid
+        if self.selected_weapon_slot is not None:
+            packet["weapon_slot"] = self.selected_weapon_slot
+        if self.selected_checkpoint is not None:
+            packet["checkpoint"] = self.selected_checkpoint
+
+        return packet
+
+    def build_packet(self, cmd: str, **payload: object) -> Dict[str, object]:
+        self.cmd = cmd
+        packet = self.to_packet()
+        packet.update(payload)
+        return packet
+
+    def reset_decision(self) -> None:
+        self.selected_grid = None
+        self.selected_weapon_slot = None
+        self.selected_checkpoint = None
+        self.robot_status = "READY"
+        self.cmd = "READY"

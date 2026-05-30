@@ -1,6 +1,6 @@
 import json
 import threading
-from typing import Dict
+from typing import Dict, Mapping
 
 from PyQt5.QtCore import QObject, pyqtSignal
 
@@ -13,11 +13,12 @@ from robocon_gui.core.gui_state import GuiState
 
 
 class GuiCommandPublisher(QObject):
+    """ROS2 bridge: GUI publish command JSON dan subscribe telemetry JSON."""
+
     telemetry_received = pyqtSignal(dict)
 
     def __init__(self, config):
         super().__init__()
-
         self.config = config
         self._shutdown = False
         self._owns_rclpy_context = False
@@ -55,16 +56,19 @@ class GuiCommandPublisher(QObject):
             f"subscribe={config.ros.telemetry_topic}"
         )
 
-    def publish_state(self, state: GuiState) -> Dict[str, object]:
-        packet = state.to_packet()
+    def publish_packet(self, packet: Mapping[str, object]) -> Dict[str, object]:
+        clean_packet = dict(packet)
 
         msg = String()
-        msg.data = json.dumps(packet)
+        msg.data = json.dumps(clean_packet, ensure_ascii=False)
 
         self.publisher.publish(msg)
         self.node.get_logger().info(f"GUI -> ROBOT | {msg.data}")
 
-        return packet
+        return clean_packet
+
+    def publish_state(self, state: GuiState) -> Dict[str, object]:
+        return self.publish_packet(state.to_packet())
 
     def _on_telemetry_received(self, msg: String) -> None:
         try:
@@ -83,9 +87,11 @@ class GuiCommandPublisher(QObject):
             return
 
         self._shutdown = True
-        self.executor.shutdown()
-        self.executor_thread.join(timeout=1.0)
-        self.node.destroy_node()
 
-        if self._owns_rclpy_context and rclpy.ok():
-            rclpy.shutdown()
+        try:
+            self.executor.shutdown()
+            self.executor_thread.join(timeout=1.0)
+            self.node.destroy_node()
+        finally:
+            if self._owns_rclpy_context and rclpy.ok():
+                rclpy.shutdown()
