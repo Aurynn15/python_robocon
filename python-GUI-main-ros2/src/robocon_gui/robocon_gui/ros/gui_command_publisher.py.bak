@@ -1,0 +1,73 @@
+import json
+import threading
+from typing import Dict
+
+import rclpy
+from rclpy.node import Node
+from rclpy.executors import MultiThreadedExecutor
+from std_msgs.msg import String
+
+from PyQt5.QtCore import QObject, pyqtSignal
+
+
+class GuiRos2Bridge(QObject):
+    telemetry_received = pyqtSignal(dict)
+
+    def __init__(self, config):
+        super().__init__()
+
+        self.config = config
+
+        self.node = Node("robocon_gui_node")
+
+        self.publisher = self.node.create_publisher(
+            String,
+            "/robocon/gui_cmd",
+            10,
+        )
+
+        self.subscriber = self.node.create_subscription(
+            String,
+            "/robocon/telemetry",
+            self._on_telemetry_received,
+            10,
+        )
+
+        self.executor = MultiThreadedExecutor()
+        self.executor.add_node(self.node)
+
+        self.executor_thread = threading.Thread(
+            target=self.executor.spin,
+            daemon=True,
+        )
+        self.executor_thread.start()
+
+        self.node.get_logger().info("ROS2 GUI bridge aktif")
+
+    def publish_state(self, state) -> Dict[str, object]:
+        packet = state.to_packet()
+
+        msg = String()
+        msg.data = json.dumps(packet)
+
+        self.publisher.publish(msg)
+
+        self.node.get_logger().info(f"GUI -> ROBOT: {msg.data}")
+
+        return packet
+
+    def _on_telemetry_received(self, msg: String) -> None:
+        try:
+            telemetry = json.loads(msg.data)
+        except json.JSONDecodeError:
+            telemetry = {
+                "status": "INVALID_JSON",
+                "raw": msg.data,
+                "error": "Telemetry dari robot bukan JSON valid",
+            }
+
+        self.telemetry_received.emit(telemetry)
+
+    def shutdown(self):
+        self.executor.shutdown()
+        self.node.destroy_node()

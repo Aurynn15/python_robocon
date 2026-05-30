@@ -1,9 +1,10 @@
 import json
 import threading
-from typing import Dict
+from typing import Dict, Mapping
 
 from PyQt5.QtCore import QObject, pyqtSignal
 
+import rclpy
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -11,13 +12,20 @@ from std_msgs.msg import String
 from robocon_gui.core.gui_state import GuiState
 
 
-class GuiRos2Bridge(QObject):
+class GuiCommandPublisher(QObject):
+    """ROS2 bridge: GUI publish command JSON dan subscribe telemetry JSON."""
+
     telemetry_received = pyqtSignal(dict)
 
     def __init__(self, config):
         super().__init__()
-
         self.config = config
+        self._shutdown = False
+        self._owns_rclpy_context = False
+
+        if not rclpy.ok():
+            rclpy.init()
+            self._owns_rclpy_context = True
 
         self.node = Node(config.ros.node_name)
 
@@ -48,16 +56,19 @@ class GuiRos2Bridge(QObject):
             f"subscribe={config.ros.telemetry_topic}"
         )
 
-    def publish_state(self, state: GuiState) -> Dict[str, object]:
-        packet = state.to_packet()
+    def publish_packet(self, packet: Mapping[str, object]) -> Dict[str, object]:
+        clean_packet = dict(packet)
 
         msg = String()
-        msg.data = json.dumps(packet)
+        msg.data = json.dumps(clean_packet, ensure_ascii=False)
 
         self.publisher.publish(msg)
         self.node.get_logger().info(f"GUI -> ROBOT | {msg.data}")
 
-        return packet
+        return clean_packet
+
+    def publish_state(self, state: GuiState) -> Dict[str, object]:
+        return self.publish_packet(state.to_packet())
 
     def _on_telemetry_received(self, msg: String) -> None:
         try:
@@ -72,5 +83,15 @@ class GuiRos2Bridge(QObject):
         self.telemetry_received.emit(telemetry)
 
     def shutdown(self) -> None:
-        self.executor.shutdown()
-        self.node.destroy_node()
+        if self._shutdown:
+            return
+
+        self._shutdown = True
+
+        try:
+            self.executor.shutdown()
+            self.executor_thread.join(timeout=1.0)
+            self.node.destroy_node()
+        finally:
+            if self._owns_rclpy_context and rclpy.ok():
+                rclpy.shutdown()
